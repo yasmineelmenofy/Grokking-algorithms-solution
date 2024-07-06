@@ -1,0 +1,13 @@
+Ch.3 Exercises :
+
+3.1 Suppose I show you a call stack like this.
+What information can you give me, just based on this call stack? 
+
+*IN side the function greet there is a call to the function greet 2 that is called recursion when a function call itself or call another function after getting out from function greet 2 it will be destroyed and only the box of the function greet will remain 
+
+3.2 Suppose you accidentally write a recursive function that runs
+forever. As you saw, your computer allocates memory on the
+stack for each function call. What happens to the stack when your
+recursive function runs forever?
+
+*It will cause infinite recursion it will keeping itself indefinitely adding more frames to the stack which will cause  a stack overflow 

@@ -1,0 +1,32 @@
+Chapter 1 Exercises:
+
+1.1 Suppose you have a sorted list of 128 names, and you’re searching
+through it using binary search. What’s the maximum number of
+steps it would take?
+
+*log₂(128)=7
+
+1.2 Suppose you double the size of the list. What’s the maximum
+number of steps now?
+
+*log₂(256)=8
+
+Give the run time for each of these scenarios in terms of Big O.
+1.3 You have a name, and you want to find the person’s phone number
+in the phone book.
+
+*Search Method: Since the phone book is sorted by name, you can use a binary search.
+ Big O Notation: O(log₂(n))
+
+1.4 You have a phone number, and you want to find the person’s name
+in the phone book. (Hint: You’ll have to search through the whole
+book!)
+
+*Search Method: simple linear search.
+ Big O Notation: O(n) 
+
+1.5 You want to read the numbers of every person in the phone book.
+*Big O Notation of worst case scenario : O(n) 
+
+1.6 You want to read the numbers of just the As
+*Big O Notation: to find the section is O(log₂(n) ) to read all a section is O(n)so it is simplified to O(n)
