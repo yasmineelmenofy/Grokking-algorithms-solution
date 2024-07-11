@@ -1,0 +1,60 @@
+Ch.4 Exercise :
+
+4.1 Write out the code for the earlier sum function.
+
+_int sum(int arr[], int n) {
+    if (n == 0) {  // base case and n is the size of the array 
+        return 0;
+    } else {
+        return arr[0] + sum(arr + 1, n - 1);  // recursive case
+    }
+}
+
+4.2 Write a recursive function to count the number of items in a list.
+
+int count(struct Node *head) {
+        if (head == NULL) {
+        return 0;
+    }
+    else {
+        return 1 + countItems(head->next);
+    }
+}
+
+4.3 Find the maximum number in a list.
+int findMax(int arr[], int n) {
+    if (n == 1) {
+        return arr[0];
+    }
+    else {
+        int max = findMax(arr + 1, n - 1); 
+        return (arr[0] > maxRest) ? arr[0] : max;
+    }
+}
+
+4.4 Remember binary search from chapter 1? It’s a divide-and-conquer
+algorithm, too. Can you come up with the base case and recursive
+case for binary search?
+
+_the base case: the mid number equal the number we searched for 
+ the recursive case: divide the array into to halves throw one and call the binary search for the other 
+
+How long would each of these operations take in Big O notation?
+4.5 Printing the value of each element in an array.
+
+_O(n)
+
+4.6 Doubling the value of each element in an array
+
+_O(n)
+
+4.7 Doubling the value of just the first element in an array.
+
+ O(1)
+
+4.8 Creating a multiplication table with all the elements in the array. So
+if your array is [2, 3, 7, 8, 10], you first multiply every element by 2,
+then multiply every element by 3, then by 7, and so on
+
+_O(n2)
+
