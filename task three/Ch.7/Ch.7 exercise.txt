@@ -1,0 +1,10 @@
+Ch.7 exercise : 
+
+7.1 In each of these graphs, what is the weight of the shortest path from
+start to finish
+
+_A.5+2+1=8 
+ 
+ B.10+20+30=60
+
+ C. we can not use Dijkstra's algorithm as there is negative weighted edges in the graph 
