@@ -1,0 +1,129 @@
+Q1:
+
+1.Is 2^(n+1) = O(2^n)?
+
+Yes , 2^(n+1) can be equal to O(2^n), as 2^(n+1) = 2 * 2^n. The correct expression is 2^(n+1) =
+ O(2 * 2^n) = O(2^n)
+
+2.Is 2^(2n) = O(2^n)?
+
+No, 2^(2n) is not O(2^n), 2^(2n) = (2^n)^2. The correct expression is 2^(2n) = O((2^n)^2)
+
+3.Is (0.25)^n = O(n)?
+
+No, (0.25)^n is not O(n), The correct way to express it in terms of Big-O notation is
+
+(0.25)^n = O(2^(-n))
+
+
+-------------------------------------------------------------------------------------------
+
+Q2:
+
+For every given f(n) and g(n), prove that f(n) = Theta(g(n)):
+
+1.g(n) = n^3, f(n) = 3n^3 + n^2 + n
+
+omega(g(n)) <= theta(g(n)) <= O(g(n))
+we need to prove that by finding approximately c1 and 2 c1 * g(n) <= f(n) <= c2 * g(n)
+ then f(n) = Theta(g(n))
+f(n) <= c2 * g(n) 
+ c2 = 5 works because:
+3n^3 + n^2 + n <= 5n^3 
+c1 * g(n) <= f(n) 
+c1 = 3 works because
+3n^3 <= 3n^3 + n^2 + n for all n >= 1.
+By finding constants c1 and c2 such that:
+c1 * g(n) <= f(n) <= c2 * g(n)
+- c1 = 3
+- c2 = 5
+So, we conclude that:
+f(n) = 3n^3 + n^2 + n = Theta(n^3)
+which means f(n) grows asymptotically at the same rate as g(n).
+
+
+2.g(n) = 2^n, f(n) = 2^(n+1)
+
+omega(g(n)) <= theta(g(n)) <= O(g(n))
+we need to prove that by finding approximately c1 and 2 c1 * g(n) <= f(n) <= c2 * g(n)
+f(n) <= c2 * g(n) 
+c2 = 4 works because:
+2*2^(n) <= 4*2^(n) 
+c1 * g(n) <= f(n) 
+c1 = 1 works because
+1*2^(n) <= 2*2^(n)
+By finding constants c1 and c2 such that:
+c1 * g(n) <= f(n) <= c2 * g(n)
+so , we conclude that f(n) = 2^(n+1)
+=theta(2^n)
+
+
+3.g(n) = ln(n), f(n) = log(n) + log(log(n))
+
+omega(g(n)) <= theta(g(n)) <= O(g(n))
+we need to prove that by finding approximately c1 and 2 c1 * g(n) <= f(n) <= c2 * g(n)
+f(n) <= c2 * g(n)
+c2 = 1 works because:
+by default f(n) grows slower than g(n) 
+log(n) + log(log(n)) <= log_e(n)
+c1 * g(n) <= f(n) 
+c1 0 < c_1 < 1 works because 
+by default f(n) grows slower than g(n) 
+log(n) + log(log(n)) >= 0.3log_e(n)
+By finding constants c1 and c2 such that:
+c1 * g(n) <= f(n) <= c2 * g(n)
+so , we conclude that f(n) = log(n) + log(log(n))
+=theta(ln(n))
+
+
+---------------------------------------------------------------------------------------------
+
+Q3: 
+For every given f(n) and g(n), prove that f(n) = O(g(n)) or f(n) = Omega(g(n)):
+
+1.f(n) = n^3, g(n) = n^2
+
+to prove f(n) = O(g(n))  we need to prove f(n) <= c * g(n) for all n >= n0.
+let that n0= 1 and c2 =10 
+for n more than 1 let n = 3 by substituting in f(3) and c2*g(3) 
+we found that f(n) <= c2 * g(n) then f(n) = O(g(n))
+   
+2.f(n) = log(n), g(n) = log^2(n)
+
+to prove f(n) = O(g(n)) we need to prove f(n) <= c * g(n) for all n >= n0
+let that n0= 10 and c2 =1
+for n more than 10 let n = 12 by substituting in f(12) and c2*g(12) 
+we found that f(n) <= c2 * g(n) then f(n) = O(g(n))
+
+--------------------------------------------------------------------------------------------------
+Q4:
+
+Prove that the running time of an algorithm is Theta(g(n)) if and only if its worst-case running time is O(g(n)) and its best-case running time is Omega(g(n)).
+ f(n) = Θ(g(n)) means 
+ c1 * g(n) <= f(n) <= c2 * g(n) for all n >= n0.
+ f(n) = O(g(n)) means
+ f(n) <= c1 * g(n) for all n >= n0.
+ f(n) = Ω(g(n)) means 
+ f(n) >= c2 * g(n) for all n >= n0.
+ If f(n) = Θ(g(n)), then the worst-case running time is O(g(n)) and the best-case running time is  f(n) <= c1 * g(n) (from O(g(n))).
+ f(n) >= c2 * g(n) (from Ω(g(n))).
+ Combining these inequalities:
+ c2 * g(n) <= f(n) <= c1 * g(n) for all n >= n0'.
+ Therefore f(n) = Θ(g(n)).
+
+-------------------------------------------------------------------------------------------------
+
+Q5:
+Prove that 𝞞(g(n)) ∩ 𝛚(g(n)) is the empty set.
+
+f(n) = O(g(n)) means
+ f(n) <= c1 * g(n) for all n >= n0.
+ f(n) = Ω(g(n)) means 
+ f(n) >= c2 * g(n) for all n >= n0.
+To be in both Ω(g(n)) and O(g(n)), a function f(n) must satisfy:
+c1 * g(n) <= f(n) <= c2 * g(n) for all n >= max(n0, n0').
+This implies that f(n) is bounded both above and below by constant multiples of g(n).
+and that can not happen which means that the intersection between them is an empty set 
+
+--------------------------------------------------------------------------------------------------
+
